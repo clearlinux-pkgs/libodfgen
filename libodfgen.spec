@@ -4,7 +4,7 @@
 #
 Name     : libodfgen
 Version  : 0.1.7
-Release  : 2
+Release  : 3
 URL      : https://dev-www.libreoffice.org/src/libodfgen-0.1.7.tar.xz
 Source0  : https://dev-www.libreoffice.org/src/libodfgen-0.1.7.tar.xz
 Summary  : Library to generate ODF documents from librevenge's api calls
