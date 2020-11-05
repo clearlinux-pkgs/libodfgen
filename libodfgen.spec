@@ -4,7 +4,7 @@
 #
 Name     : libodfgen
 Version  : 0.1.7
-Release  : 3
+Release  : 4
 URL      : https://dev-www.libreoffice.org/src/libodfgen-0.1.7.tar.xz
 Source0  : https://dev-www.libreoffice.org/src/libodfgen-0.1.7.tar.xz
 Summary  : Library to generate ODF documents from librevenge's api calls
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : LGPL-2.1 MPL-2.0-no-copyleft-exception
 Requires: libodfgen-lib = %{version}-%{release}
 Requires: libodfgen-license = %{version}-%{release}
+BuildRequires : boost-dev
 BuildRequires : doxygen
 BuildRequires : pkgconfig(librevenge-0.0)
 BuildRequires : pkgconfig(librevenge-stream-0.0)
@@ -33,6 +34,7 @@ Summary: dev components for the libodfgen package.
 Group: Development
 Requires: libodfgen-lib = %{version}-%{release}
 Provides: libodfgen-devel = %{version}-%{release}
+Requires: libodfgen = %{version}-%{release}
 
 %description dev
 dev components for the libodfgen package.
@@ -65,30 +67,35 @@ license components for the libodfgen package.
 
 %prep
 %setup -q -n libodfgen-0.1.7
+cd %{_builddir}/libodfgen-0.1.7
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1553126704
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1604610428
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static --disable-werror
 make  %{?_smp_mflags}
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1553126704
+export SOURCE_DATE_EPOCH=1604610428
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libodfgen
-cp COPYING.LGPL %{buildroot}/usr/share/package-licenses/libodfgen/COPYING.LGPL
-cp COPYING.MPL %{buildroot}/usr/share/package-licenses/libodfgen/COPYING.MPL
+cp %{_builddir}/libodfgen-0.1.7/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libodfgen/3704f4680301a60004b20f94e0b5b8c7ff1484a9
+cp %{_builddir}/libodfgen-0.1.7/COPYING.MPL %{buildroot}/usr/share/package-licenses/libodfgen/9744cedce099f727b327cd9913a1fdc58a7f5599
 %make_install
 
 %files
@@ -117,5 +124,5 @@ cp COPYING.MPL %{buildroot}/usr/share/package-licenses/libodfgen/COPYING.MPL
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/libodfgen/COPYING.LGPL
-/usr/share/package-licenses/libodfgen/COPYING.MPL
+/usr/share/package-licenses/libodfgen/3704f4680301a60004b20f94e0b5b8c7ff1484a9
+/usr/share/package-licenses/libodfgen/9744cedce099f727b327cd9913a1fdc58a7f5599
