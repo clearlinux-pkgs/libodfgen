@@ -1,3 +1,136 @@
+2021-01-06  ALONSO Laurent  <laurent.alonso@inria.fr>  [8119035756c9d11e7bf523c5d7cc66dbf78a9238]
+
+tconfigure.ac: update micro revision to prepare a release...
+
+
+2021-01-06  ALONSO Laurent  <laurent.alonso@inria.fr>  [6d82aa26dc48d78c27a79a73bd1709f1efbc8f20]
+
+tappendXML: try to retrieve the main namespace...
+
+
+2020-12-30  ALONSO Laurent  <laurent.alonso@inria.fr>  [03c5eea6955159a12f25aee814b7f61d744ee7d6]
+
+tcppcheck: correct some warnings...
+
+
+2020-12-30  ALONSO Laurent  <laurent.alonso@inria.fr>  [7de53ec507101319c5decc910619d1b1d06322da]
+
+tastyle: ...
+
+
+2020-12-30  ALONSO Laurent  <laurent.alonso@inria.fr>  [208f71f73db30ef822f2e8cc878cb9d61ede9314]
+
+tupdate README/NEWS files...
+
+
+2020-12-30  ALONSO Laurent  <laurent.alonso@inria.fr>  [42498362815191152f4583dd18b2c055402835ce]
+
+tconfigure.ac: HAVE_VISIBILITY must be always defined...
+
+
+2020-12-30  ALONSO Laurent  <laurent.alonso@inria.fr>  [2edf8af587d538b2982de93c23616ce82e2594bd]
+
+tGraphicStyle.cxx: try to retrieve style:print-content src/OdfGenerator.cxx: try to retrieve text:bookmark-{start|end}
+
+
+2019-12-07  Miklos Vajna  <vmiklos@collabora.com>  [a596b8f5eb57ddcb39a2e6818e190d4570d14e84]
+
+tDon't access static members through instance
+
+
+2019-12-07  Miklos Vajna  <vmiklos@collabora.com>  [dd7801667f1985fe0fb5ba7c3d9678506b570693]
+
+tMake these member functions static
+
+
+2019-12-07  Miklos Vajna  <vmiklos@collabora.com>  [bc3dccc7fd3cdf3b62b41f4f3c1876134a0b2a18]
+
+tUse nullptr
+
+
+2019-12-07  Miklos Vajna  <vmiklos@collabora.com>  [61db52fa1c9f4eebb8f14f150cb9ab6b7c597e8e]
+
+tUse range-based for loop
+
+
+2019-11-24  Miklos Vajna  <vmiklos@collabora.com>  [38aacbd4fc0606f6cf5ca4b11608750d607acaf4]
+
+tReadability: make these member functions const
+
+
+2019-11-23  alonso  <laurent.alonso@inria.fr>  [5110672e4a0ba071fdfb53830c5a7f6ca6a8be58]
+
+tOdgGenerator[picture]: retrieve draw:z-index
+
+
+2019-11-22  alonso  <laurent.alonso@inria.fr>  [2626a260c60abb26cb5fb13f2c989bb807e557a2]
+
+tOdgGenerator[text box]: retrieve draw:z-index...
+
+
+2019-05-24  ALONSO Laurent  <laurent.alonso@inria.fr>  [0f8a5b79ee841afa8b4beee53957cb2785a7249a]
+
+tOdsGenerator: does not output double with std::fixed...
+
+
+2019-04-11  ALONSO Laurent  <laurent.alonso@inria.fr>  [fbe6bf59e3dd863f6a937354a446f3a178b31d2c]
+
+tGraphicStyle.cxx: retrieve draw:auto-grow-width,draw:fit-to-size,style:shrink-to-fit
+
+
+2019-03-31  David Tardon  <dtardon@redhat.com>  [f3e5e16a6da8dac0abcdf048a058d4110a155f3b]
+
+tdo not reinvent the wheel
+
+
+2019-01-19  Miklos Vajna  <vmiklos@collabora.com>  [353c97f0163a9a6d8460445ace725cfe4cda50eb]
+
+tFix too small loop variables
+
+tThese loop variables had narrower type 'unsigned int' than the iteration's
+tupper bound 'unsigned long'.
+
+2018-12-29  David Tardon  <dtardon@redhat.com>  [13d8c49e1a04f71ccdc512e3ae0f15614d10dd18]
+
+tWaE: drop unnecessary parentheses
+
+
+2018-12-29  David Tardon  <dtardon@redhat.com>  [465256d662e306769adf9e47ae31e31b79e1def3]
+
+tcheck for __attribute__((visibility)) too
+
+
+2018-08-19  osnola  <alonso@loria.fr>  [e5bc388a6710bedc105b7422549f1d1cde49c829]
+
+tOdfGenerator.cxx: retrieve table:table-background attribute + do not create headers in odp table...
+
+
+2018-08-19  osnola  <alonso@loria.fr>  [80156c071c3d881f82f686ddd39c401a3e68080c]
+
+tsheet: emit style:row-height instead of style:min-row-height as    LibreOffice seems to ignore style:min-row-height...
+
+
+2018-07-19  osnola  <alonso@loria.fr>  [78c936032632e8fc0eb258f699b8623eb6ad9be4]
+
+tOdgGenerator: define xmlns:number...
+
+
+2018-07-19  osnola  <alonso@loria.fr>  [7ecea2f3eed53092cdc912c6eb713de9abd9a57c]
+
+tTableStyle.cxx: try to retrieve more borders when generating odg/p.
+
+
+2018-06-17  David Tardon  <dtardon@redhat.com>  [5e9ab6abfc6915b4f3c9cceb48f3d527ef37adc3]
+
+tallow building with gcc 4.8
+
+tregex is really supported only from 4.9 up.
+
+2018-06-16  David Tardon  <dtardon@redhat.com>  [cb0e97de34b694f92b3ace3f04d4a01e334f6b2e]
+
+tfix out-of-tree build of tests
+
+
 2018-06-12  osnola  <alonso@loria.fr>  [c2825b346522b47f965758588573022c53e6cb45]
 
 tupdate NEWS
